@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Stream - Select Membership Package | Pricing</title>
+    <meta name="description" content="Choose your Stream Africa membership package. One-time payment for lifetime access to rewards and collaborations.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://streamafricaapp.com.ng/package.html">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* [Existing Styles remain unchanged] */
+        :root {
+            --bg-color: #14201E;
+            --accent-green: #10B981;
+            --text-color: #ffffff;
+            --text-muted: #b0b0b0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            z-index: 100;
+        }
+
+        .back-home:hover {
+            color: #fff;
+        }
+
+        .pricing-card-wrapper {
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .pricing-card {
+            background: #e3e8da; /* Light sage color from image */
+            border-radius: 30px;
+            padding: 30px;
+            color: #1A2220;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .user-welcome {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #555;
+            background: rgba(255,255,255,0.5);
+            padding: 8px;
+            border-radius: 50px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .user-welcome strong {
+            color: #14201E;
+        }
+
+        .pricing-header {
+            background-color: #14201E; /* Dark header block */
+            color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .pricing-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .onboarding-fee {
+            background-color: #fcfdf5;
+            border-radius: 15px;
+            padding: 15px 25px;
+            width: fit-content;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .fee-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .fee-amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2b3a37;
+            line-height: 1;
+        }
+
+        .pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .item-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #4a5553;
+        }
+
+        .item-icon {
+            width: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .item-price {
+            background-color: #cfd6c6;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #2b3a37;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cashback-badge {
+            background-color: #2b3a37;
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        .pricing-footer-badges {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .badge-pill-main {
+            background-color: #14201E;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .badge-pills-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge-pill-sub {
+            background-color: transparent;
+            border: 1px solid #14201E;
+            color: #14201E;
+            border-radius: 50px;
+            padding: 8px 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-pay {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 18px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .btn-pay:hover {
+            transform: translateY(-3px);
+            background-color: #0d9668;
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+            color: #fff;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .back-home {
+                top: 20px;
+                left: 20px;
+            }
+            .pricing-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
+
+    <div class="pricing-card-wrapper">
+        <div class="pricing-card">
+            <!-- User Info Display -->
+            <div class="user-welcome">
+                Account: <strong id="displayEmail">Waiting for details...</strong>
+            </div>
+
+            <!-- Dark Header Block -->
+            <div class="pricing-header">
+                <h2 class="pricing-title">Activate Membership</h2>
+            </div>
+
+            <!-- Onboarding Fee -->
+            <div class="onboarding-fee">
+                <div class="fee-label">One-time payment</div>
+                <div class="fee-amount">₦12,000</div>
+            </div>
+
+            <!-- Pricing List -->
+            <ul class="pricing-list">
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-wallet item-icon"></i> Signup Bonus</span>
+                    <span class="item-price">₦12,000 <span class="cashback-badge">Credits</span></span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-handshake item-icon"></i> Stream Partner</span>
+                    <span class="item-price">Included</span>
+                </li>
+                
+                <!-- Divider for Tasks -->
+                <div style="height: 1px; background: rgba(0,0,0,0.05); margin: 15px 0;"></div>
+
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-broadcast-tower item-icon"></i> LiveStream Collab</span>
+                    <span class="item-price">Access Unlocked</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-video item-icon"></i> Video Collab</span>
+                    <span class="item-price">Access Unlocked</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-headphones item-icon"></i> Audio Collab</span>
+                    <span class="item-price">Access Unlocked</span>
+                </li>
+            </ul>
+
+            <!-- Badges -->
+            <div class="pricing-footer-badges">
+                <div class="badge-pill-main">
+                    Access to TikTok Creator Opportunities
+                </div>
+                <div class="badge-pills-row">
+                    <div class="badge-pill-sub">Wishhub</div>
+                    <div class="badge-pill-sub">Bazaar</div>
+                    <div class="badge-pill-sub">Skillup</div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <button class="btn-pay" id="proceedBtn">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <!-- Paystack Inline JS -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+
+    <!-- Main Logic -->
+    <script type="module">
+        import { db, doc, getDoc } from "./firebase-init.js";
+
+        let finalEmail = '';
+        let globalSettings = null;
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // 1. Email Logic
+            const urlParams = new URLSearchParams(window.location.search);
+            const urlEmail = urlParams.get('email');
+            const storageEmail = localStorage.getItem('userEmail');
+
+            if (urlEmail && urlEmail.trim() !== '') {
+                finalEmail = urlEmail;
+                localStorage.setItem('userEmail', urlEmail);
+            } else if (storageEmail) {
+                finalEmail = storageEmail;
+            } else {
+                finalEmail = 'guest@stream.com'; // Fallback
+            }
+            document.getElementById('displayEmail').textContent = finalEmail;
+
+            // 2. Fetch Settings for Button Logic
+            try {
+                const docRef = doc(db, "settings", "global");
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    globalSettings = docSnap.data();
+                }
+            } catch (error) {
+                console.error("Error fetching settings:", error);
+            }
+        });
+
+        document.getElementById('proceedBtn').addEventListener('click', () => {
+            const btn = document.getElementById('proceedBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            btn.disabled = true;
+
+            if (globalSettings && globalSettings.enablePaystack) {
+                // PAYSTACK FLOW
+                payWithPaystack(globalSettings.paystackPublicKey, globalSettings.supportLink);
+            } else {
+                // MANUAL FLOW
+                localStorage.setItem('selectedPackage', 'Premium Membership');
+                localStorage.setItem('selectedAmount', '12,000');
+                window.location.href = 'payment.html?email=' + encodeURIComponent(finalEmail);
+            }
+        });
+
+        function payWithPaystack(publicKey, supportLink) {
+            if (!publicKey) {
+                alert("Payment Error: Public Key not configured.");
+                window.location.reload();
+                return;
+            }
+
+            const handler = PaystackPop.setup({
+                key: publicKey, 
+                email: finalEmail,
+                amount: 12000 * 100, // Amount in kobo
+                currency: 'NGN',
+                ref: ''+Math.floor((Math.random() * 1000000000) + 1), 
+                onClose: function(){
+                    document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
+                    document.getElementById('proceedBtn').disabled = false;
+                    alert('Window closed.');
+                },
+                callback: function(response){
+                    // Redirect to support link on success
+                    window.location.href = supportLink || 'index.html';
+                }
+            });
+            handler.openIframe();
+        }
+    </script>
+
+</body>
+</html>

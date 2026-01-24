@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Meta Tags -->
+    <title>Stream - Digital Rewards & Creator Collaboration | #1 Platform in Africa</title>
+    <meta name="description" content="Join Stream Africa to monetize your digital engagement. Earn rewards by discovering content, listening to music, and collaborating with top creators. The ultimate digital community in Nigeria and Africa.">
+    <meta name="keywords" content="Stream Africa, Digital Rewards, Content Collaboration, Creator Economy, Stream App, Online Community, TikTok Creator Network, Digital Marketing">
+    <meta name="author" content="Stream Africa">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://streamafricaapp.com.ng/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://streamafricaapp.com.ng/">
+    <meta property="og:title" content="Stream - Monetize Your Engagement">
+    <meta property="og:description" content="Stop scrolling for free. Start earning rewards for every video you discover and song you stream. Join the revolution today.">
+    <meta property="og:image" content="https://streamafricaapp.com.ng/assets/desktop-background.jpg">
+    <meta property="og:site_name" content="Stream Africa">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://streamafricaapp.com.ng/">
+    <meta property="twitter:title" content="Stream - Monetize Your Engagement">
+    <meta property="twitter:description" content="Stop scrolling for free. Start earning rewards for every video you discover and song you stream.">
+    <meta property="twitter:image" content="https://streamafricaapp.com.ng/assets/desktop-background.jpg">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Stream Africa",
+      "url": "https://streamafricaapp.com.ng",
+      "logo": "https://streamafricaapp.com.ng/assets/logo.svg",
+      "description": "An Innovative Technology endowed with Opportunity, Like-Communities and Rewards.",
+      "sameAs": [
+        "https://facebook.com/streamafrica",
+        "https://twitter.com/streamafrica",
+        "https://instagram.com/streamafrica",
+        "https://tiktok.com/@streamafrica"
+      ]
+    }
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #14201E;
+            --card-bg: #1A2220;
+            --cream-color: #F3F4D9;
+            --text-color: #ffffff;
+            --text-muted: #b0b0b0;
+            --accent-green: #10B981;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(20, 32, 30, 0.9) !important;
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        @media (min-width: 992px) {
+            .navbar {
+                background-color: transparent;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                background-color: var(--bg-color);
+            }
+        }
+
+        .navbar-brand img {
+            height: 35px;
+            width: auto;
+        }
+
+        .nav-link {
+            color: #fff !important;
+            font-weight: 400;
+            font-size: 14px;
+            margin-left: 15px;
+            margin-right: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-toggler {
+            border: none;
+            color: #fff;
+            padding: 0;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+        /* Buttons */
+        .btn-signup {
+            background-color: var(--cream-color);
+            color: var(--bg-color);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            box-shadow: 0 0 15px rgba(243, 244, 217, 0.3);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(243, 244, 217, 0.5);
+            background-color: #ffffe6;
+            color: var(--bg-color);
+        }
+
+        .btn-learn {
+            background-color: transparent !important;
+            color: #fff;
+            border: 1px solid #fff;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-learn:hover {
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* Floating Signup Button (Mobile) */
+        .floating-signup-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            z-index: 9999;
+            background-color: var(--accent-green);
+            color: #fff;
+            padding: 15px 0;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            pointer-events: none;
+            width: 90%; /* Wide button */
+            max-width: 400px;
+            text-align: center;
+            font-size: 1.1rem;
+            display: block;
+        }
+
+        .floating-signup-btn.visible {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .floating-signup-btn:active {
+            transform: translateX(-50%) scale(0.98);
+        }
+
+        @media (min-width: 992px) {
+            .floating-signup-btn {
+                display: none !important;
+            }
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center; /* Desktop Alignment */
+            padding-top: 70px;
+        }
+        
+        @media (max-width: 991px) {
+            .hero-section {
+                /* Mobile: Flex Column to distribute Top Content and Bottom Image */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between; 
+                padding-top: 100px;
+                padding-bottom: 0;
+                height: auto;
+            }
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        @media (min-width: 992px) {
+            .hero-bg {
+                background-image: url('assets/desktop-background.jpg');
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero-bg {
+                background-image: url('assets/mobile-background.jpg');
+            }
+        }
+
+        /* Desktop Content Wrapper */
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Mobile specific content container to allow spacing */
+        .hero-mobile-content-container {
+            flex-grow: 1; /* Takes up available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center text vertically in top space */
+            padding-bottom: 20px;
+            z-index: 10;
+        }
+
+        /* Force center on mobile, left on desktop */
+        @media (max-width: 991px) {
+            .hero-mobile-content-container {
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero-mobile-content-container {
+                align-items: flex-start; /* Ensure left alignment on desktop */
+            }
+        }
+
+        .hero-title-img {
+            display: block;
+            margin-bottom: 25px;
+            height: auto;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            color: #fff;
+            max-width: 450px;
+        }
+
+        @media (min-width: 992px) {
+            .hero-title-img {
+                width: 220px;
+                margin-left: 0; /* Strict left alignment */
+                margin-right: 0;
+            }
+            .hero-content-wrapper {
+                padding-left: 20px;
+            }
+            .hero-desc {
+                text-align: left; /* Strict left alignment */
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero-title-img {
+                width: 180px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-desc {
+                font-size: 16px;
+                max-width: 320px;
+                text-align: center;
+            }
+        }
+
+        .hero-img-desktop {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 5;
+            max-height: 85vh;
+            width: auto;
+            pointer-events: auto; /* ENABLED for clicking */
+            cursor: pointer;
+        }
+
+        /* Mobile Image: Edge to Edge and Bottom Anchored */
+        .hero-img-mobile-full {
+            width: 100%;
+            display: block;
+            margin-top: auto; /* Pushes image to bottom of flex container */
+            z-index: 5;
+            position: relative;
+            pointer-events: auto; /* ENABLED for clicking */
+            cursor: pointer;
+            /* Ensure no padding interrupts the edge-to-edge look */
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--bg-color);
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .about-img-wrapper {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .about-img-wrapper:hover .about-img {
+            transform: scale(1.03);
+        }
+
+        .about-content {
+            padding-left: 30px;
+        }
+
+        .about-logo {
+            width: 120px;
+            display: block;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: var(--text-color);
+        }
+        
+        .section-title span {
+            background: linear-gradient(90deg, #fff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-text {
+            color: var(--text-muted);
+            line-height: 1.9;
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        @media (max-width: 991px) {
+            .about-content {
+                padding-left: 0;
+                margin-bottom: 50px;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .about-img-wrapper {
+                min-height: 300px;
+            }
+        }
+
+        /* Features Section */
+        .features-section {
+            padding-top: 100px;
+            padding-bottom: 120px;
+            position: relative;
+            background: radial-gradient(circle at 50% 0%, #1f2e2b 0%, var(--bg-color) 70%);
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 20px 50px -10px rgba(0,0,0,0.5), 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-img-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .feature-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover .feature-img {
+            transform: scale(1.02);
+        }
+
+        .feature-content {
+            padding: 25px 25px 35px 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .feature-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .feature-link {
+            color: var(--accent-green);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+            transition: gap 0.3s ease;
+        }
+
+        .feature-link:hover {
+            gap: 12px;
+            color: #34d399;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding-top: 80px;
+            padding-bottom: 100px;
+            background-color: var(--bg-color);
+            position: relative;
+        }
+
+        .pricing-card-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* Floating decoration elements */
+        .floating-currency {
+            position: absolute;
+            width: 80px;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .pricing-card {
+            background: #e3e8da; /* Light sage color from image */
+            border-radius: 30px;
+            padding: 30px;
+            color: #1A2220;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            overflow: hidden;
+        }
+
+        .pricing-header {
+            background-color: #14201E; /* Dark header block */
+            color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .pricing-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .onboarding-fee {
+            background-color: #fcfdf5;
+            border-radius: 15px;
+            padding: 15px 25px;
+            width: fit-content;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .fee-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #555;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .fee-amount {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2b3a37;
+            line-height: 1;
+        }
+
+        .pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pricing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .item-name {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #4a5553;
+        }
+
+        .item-icon {
+            width: 20px;
+            text-align: center;
+            color: #6c757d;
+        }
+
+        .item-price {
+            background-color: #cfd6c6;
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 700;
+            color: #2b3a37;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cashback-badge {
+            background-color: #2b3a37;
+            color: #fff;
+            font-size: 0.6rem;
+            padding: 2px 6px;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        .pricing-footer-badges {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .badge-pill-main {
+            background-color: #14201E;
+            color: #fff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .badge-pills-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge-pill-sub {
+            background-color: transparent;
+            border: 1px solid #14201E;
+            color: #14201E;
+            border-radius: 50px;
+            padding: 8px 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .btn-choose-plan {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-green);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-choose-plan:hover {
+            transform: translateY(-3px);
+            background-color: #0d9668;
+            box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
+            color: #fff;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+            background-color: #0f1615;
+        }
+
+        .accordion-item {
+            background-color: transparent;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 15px !important;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background-color: rgba(255,255,255,0.02);
+            color: #fff;
+            box-shadow: none !important;
+            padding: 20px 25px;
+            font-weight: 500;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+        }
+
+        .accordion-button::after {
+            filter: invert(1);
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(1) sepia(1) saturate(5) hue-rotate(100deg);
+        }
+
+        .accordion-body {
+            color: var(--text-muted);
+            padding: 25px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            background-color: rgba(0,0,0,0.1);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(rgba(20, 32, 30, 0.9), rgba(20, 32, 30, 0.95)), url('assets/hero-bg.jpg'); /* Reuse existing asset or fallback */
+            background-size: cover;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a100f;
+            padding-top: 80px;
+            padding-bottom: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            height: 40px; /* Matched to be similar to header logo */
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .footer-desc {
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #777;
+            border-left: 2px solid var(--accent-green);
+            padding-left: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-heading {
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.05);
+            color: #fff;
+            border-radius: 50%;
+            margin-right: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-green);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #666;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Signup Button (Mobile Only) -->
+    <a href="register.html" class="floating-signup-btn" id="floatingSignup">
+        Signup
+    </a>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.svg" alt="Stream Logo">
+            </a>
+
+            <!-- Mobile: Signup + Toggler -->
+            <div class="d-flex align-items-center order-lg-3 gap-3">
+                <a href="register.html" class="btn btn-signup d-block">Signup</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Links (Desktop: Center) -->
+            <div class="collapse navbar-collapse order-lg-2 justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faqs">Faqs</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section">
+        <!-- Background Layer -->
+        <div class="hero-bg"></div>
+
+        <!-- Desktop Hero Image (Only shown on lg screens) -->
+        <img src="assets/hero-image-desktop.png" alt="" class="hero-img-desktop d-none d-lg-block" data-aos="fade-left" data-aos-duration="1000">
+
+        <!-- Mobile Content Structure: Content Top, Image Bottom (Outside Container for Full Width) -->
+        
+        <!-- Content Container (Desktop & Mobile Top Part) -->
+        <div class="container position-relative h-lg-100 d-flex flex-column flex-lg-row align-items-lg-center">
+            
+            <div class="row h-100 w-100 align-items-center m-0">
+                <!-- Content Column -->
+                <div class="col-lg-6 hero-content p-0">
+                    <div class="hero-content-wrapper hero-mobile-content-container" data-aos="fade-right" data-aos-duration="1000">
+                        <!-- Title Image -->
+                        <img src="assets/stream-logo-hero.svg" alt="Stream" class="hero-title-img">
+                        
+                        <!-- Description -->
+                        <p class="hero-desc">
+                            An Innovative Technology endowed with Opportunity, Like-Communities and Rewards
+                        </p>
+
+                        <!-- Buttons -->
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                            <a href="register.html" class="btn btn-signup">Signup</a>
+                            <a href="#" class="btn btn-learn">Learn-more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Mobile Image (Outside Container for Edge-to-Edge) -->
+        <!-- Only visible on mobile (d-lg-none) -->
+        <img src="assets/hero-image-mobile.png" alt="" class="hero-img-mobile-full d-lg-none" data-aos="fade-up" data-aos-duration="1000">
+
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left Side: Feature Image (Order 2 on Mobile) -->
+                <div class="col-lg-6 mb-4 mb-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="about-img-wrapper">
+                        <img src="assets/about.jpg" alt="About Stream" class="about-img">
+                    </div>
+                </div>
+
+                <!-- Right Side: Text Content (Order 1 on Mobile) -->
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                    <div class="about-content">
+                        <img src="assets/stream-logo-hero.svg" alt="Stream" class="about-logo">
+                        
+                        <h2 class="section-title"><span>Who are we?</span></h2>
+                        
+                        <p class="section-text">
+                            We are Stream, a digital movement redefining how Africans experience and earn from entertainment. Built on the belief that your digital presence should be rewarding, Stream connects people, creativity, and opportunity in one continuous flow.
+                        </p>
+                        
+                        <p class="section-text">
+                            Through partnerships with artists, record labels, movie studios, and content distributors, Stream serves as a bridge between creators and the audience. We help them reach real streamers and in return, our users (the Streamers) are rewarded for every collaboration they contribute to.
+                        </p>
+
+                        <p class="section-text">
+                            Stream transforms ordinary digital engagement into real value. Every time you collaborate, you’re not just partnering, you’re participating in a new digital economy where creativity and rewards flow together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up"><span>Our Features</span></h2>
+            
+            <div class="row g-4">
+                <!-- Feature 1: Cheap Airtime -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/cheap-airtime.jpg" alt="Cheap Airtime" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Competitive Data Rates</h3>
+                            <p class="feature-desc">
+                                Access affordable data and airtime on Stream. Enjoy your call and browsing with competitive rates. Get 1GB for just ₦200 and other exciting offers.
+                            </p>
+                            <a href="register.html" class="feature-link">Get Started <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Audio Collaboration -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/audio-collaboration.jpg" alt="Audio Collaboration" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Audio Collaboration</h3>
+                            <p class="feature-desc">
+                                Partner with top artists and earn points every time you vibe to their sound. Discover new music and get rewarded for your listening time.
+                            </p>
+                            <a href="register.html" class="feature-link">Listen & Earn <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Video Collaboration -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/video-collaboration.jpg" alt="Video Collaboration" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Video Collaboration</h3>
+                            <p class="feature-desc">
+                                Partner with movie studios and content distributors. Get rewarded every time you engage with their reels, trailers, and promotional content.
+                            </p>
+                            <a href="register.html" class="feature-link">Watch & Earn <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Live Stream Collab -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/live-stream-collab.jpg" alt="Live Stream Collab" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Live Stream Collab</h3>
+                            <p class="feature-desc">
+                                Join a live session on STREAM and earn rewards for participating and engaging with premium visual content from top partners and studios.
+                            </p>
+                            <a href="register.html" class="feature-link">Join Live <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Snap Collab -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/snap-collab.jpg" alt="Snap Collab" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">Snap Collab</h3>
+                            <p class="feature-desc">
+                                Scroll and earn. Interact with stunning artworks, creative designs, and visual content from top artists and studios, and get paid for your view time.
+                            </p>
+                            <a href="register.html" class="feature-link">View Gallery <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6: File Download -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-img-container">
+                            <img src="assets/file-download.jpg" alt="File Download" class="feature-img">
+                        </div>
+                        <div class="feature-content">
+                            <h3 class="feature-title">File Download</h3>
+                            <p class="feature-desc">
+                                Tap download and earn. Every time you download content from our creators and distributors, you earn instant rewards on Stream.
+                            </p>
+                            <a href="register.html" class="feature-link">Download Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="pricing-section" id="packages">
+        <div class="container">
+            <div class="pricing-card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+                <!-- Floating Icons -->
+                <div style="position: absolute; top: -30px; right: -30px; width: 60px; height: 60px; background: #10B981; border-radius: 50%; z-index: 1; filter: blur(20px); opacity: 0.5;"></div>
+                
+                <div class="pricing-card">
+                    <!-- Dark Header Block -->
+                    <div class="pricing-header">
+                        <h2 class="pricing-title">Membership Pricing</h2>
+                    </div>
+
+                    <!-- Onboarding Fee -->
+                    <div class="onboarding-fee">
+                        <div class="fee-label">Onboarding fee</div>
+                        <div class="fee-amount">₦12,000</div>
+                    </div>
+
+                    <!-- Pricing List -->
+                    <ul class="pricing-list">
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-wallet item-icon"></i> Signup Bonus</span>
+                            <span class="item-price">₦12,000 <span class="cashback-badge">Credits</span></span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-handshake item-icon"></i> Stream Partner</span>
+                            <span class="item-price">Included</span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-sync item-icon"></i> Partner Reconnect</span>
+                            <span class="item-price">Included</span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-link item-icon"></i> Community Chain</span>
+                            <span class="item-price">Included</span>
+                        </li>
+                        
+                        <!-- Divider for Tasks -->
+                        <div style="height: 1px; background: rgba(0,0,0,0.05); margin: 15px 0;"></div>
+
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-broadcast-tower item-icon"></i> LiveStream Collab</span>
+                            <span class="item-price">Access Unlocked</span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-video item-icon"></i> Video Collab</span>
+                            <span class="item-price">Access Unlocked</span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-headphones item-icon"></i> Audio Collab</span>
+                            <span class="item-price">Access Unlocked</span>
+                        </li>
+                        <li class="pricing-item">
+                            <span class="item-name"><i class="fas fa-download item-icon"></i> File download</span>
+                            <span class="item-price">Access Unlocked</span>
+                        </li>
+                    </ul>
+
+                    <!-- Badges -->
+                    <div class="pricing-footer-badges">
+                        <div class="badge-pill-main">
+                            Access to TikTok Creator Opportunities
+                        </div>
+                        <div class="badge-pills-row">
+                            <div class="badge-pill-sub">Wishhub (Mystery Gift)</div>
+                            <div class="badge-pill-sub">Stream Bazaar</div>
+                            <div class="badge-pill-sub">Stream Skillup</div>
+                        </div>
+                    </div>
+
+                    <!-- Button -->
+                    <a href="register.html" class="btn btn-choose-plan">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faqs">
+        <div class="container">
+            <h2 class="section-title text-center mb-5" data-aos="fade-up"><span>Frequently Asked Questions</span></h2>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion" id="faqAccordion">
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How do I start earning on Stream?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Simply sign up, pay the onboarding fee, and start participating in our various collaboration tasks like discovering videos, listening to audio, or downloading files. Each interaction accumulates rewards.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Is the onboarding fee a one-time payment?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, the onboarding fee of ₦12,000 is a one-time payment that grants you lifetime access to the Stream platform and all collaboration opportunities.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    When can I withdraw my rewards?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Withdrawals are processed bi-weekly. Once you reach the minimum threshold, you can request a payout directly to your local bank account.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Do I need special skills to perform tasks?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Not at all! Our tasks are designed for everyone. If you can watch a video, scroll through images, or listen to music, you have all the skills needed to participate.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    What is the "Wishhub"?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Wishhub is our exclusive reward system where active users can win mystery gifts every two weeks. These range from gadgets to bonus credits, just for being consistent on the platform.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    How does the TikTok Creator's Network work?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    This is a specialized program for content creators. By joining this network through Stream, eligible creators can access performance-based opportunities and exclusive campaigns.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    Is my personal data safe?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Absolutely. We use industry-standard encryption to protect your personal information and payment details. We never sell your data to third parties.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="fade-up">
+                <div class="col-lg-8">
+                    <h2 class="cta-title">Ready to Monetize Your Engagement?</h2>
+                    <p class="text-white mb-4 fs-5" style="opacity: 0.9;">Join thousands of Streamers across Africa who are turning entertainment into rewards today.</p>
+                    <a href="register.html" class="btn btn-signup btn-lg px-5 py-3 fs-5">Get Started Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- Column 1: Logo & Disclaimer -->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <img src="assets/logo.svg" alt="Stream Logo" class="footer-logo">
+                    <p class="footer-desc">
+                        Redefining digital engagement in Africa. Stream connects you to the creators you love and rewards you for your attention.
+                    </p>
+                    <div class="disclaimer">
+                        <strong>Disclaimer:</strong> Stream Africa is a digital rewards platform and does not guarantee income. Earnings vary based on user activity and available campaigns.
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="col-lg-2 offset-lg-1 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#packages">Pricing</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Social Media -->
+                <div class="col-lg-3 offset-lg-1 col-md-6">
+                    <h5 class="footer-heading">Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                    </div>
+                    <p class="mt-4 text-muted small">
+                        Join our community channel for updates.
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                &copy; 2026 Stream Africa. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize AOS
+            AOS.init({
+                once: true,
+                offset: 50
+            });
+
+            // Navbar Glassmorphism on Scroll
+            $(window).scroll(function() {
+                var scrollTop = $(this).scrollTop();
+                var heroHeight = $('.hero-section').height();
+
+                // Navbar toggle
+                if (scrollTop > 10) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+
+                // Floating Signup Button Visibility (Mobile Only logic handled via CSS media query, but JS toggles visibility class)
+                if (scrollTop > heroHeight) {
+                    $('#floatingSignup').addClass('visible');
+                } else {
+                    $('#floatingSignup').removeClass('visible');
+                }
+            });
+        });
+    </script>
+    
+    <!-- Firebase Logic for Global Redirects -->
+    <script type="module">
+        import { db, doc, getDoc } from "./firebase-init.js";
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            let supportLink = null;
+
+            // Fetch global link
+            try {
+                const docRef = doc(db, "settings", "global");
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    supportLink = docSnap.data().supportLink;
+                }
+            } catch (error) {
+                console.error("Error fetching support link", error);
+            }
+
+            // Function to handle redirection
+            const handleRedirect = (e) => {
+                if (supportLink) {
+                    e.preventDefault(); 
+                    window.location.href = supportLink;
+                }
+            };
+
+            // Targets: Feature Cards, Hero Images, About Images, Social Icons
+            const selectors = [
+                '.feature-card',
+                '.hero-img-desktop',
+                '.hero-img-mobile-full',
+                '.about-img-wrapper',
+                '.social-links a'
+            ];
+
+            const elements = document.querySelectorAll(selectors.join(', '));
+            
+            elements.forEach(el => {
+                el.addEventListener('click', handleRedirect);
+                el.style.cursor = 'pointer'; 
+            });
+        });
+    </script>
+</body>
+</html>
