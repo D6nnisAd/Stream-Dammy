@@ -69,6 +69,7 @@
             position: relative;
         }
 
+        /* Updated Card Styling for Clickability */
         .pricing-card {
             background: #e3e8da; /* Light sage color from image */
             border-radius: 30px;
@@ -79,6 +80,14 @@
             box-shadow: 0 30px 60px rgba(0,0,0,0.4);
             overflow: hidden;
             animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer; /* Indicates it's clickable */
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            border: 2px solid rgba(16, 185, 129, 0.3); /* Subtle green border hint */
         }
 
         @keyframes slideUp {
@@ -110,6 +119,12 @@
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        /* Subtle animation on card hover */
+        .pricing-card:hover .pricing-header {
+            transform: scale(1.02);
         }
 
         .pricing-title {
@@ -185,15 +200,6 @@
             gap: 5px;
         }
 
-        .cashback-badge {
-            background-color: #2b3a37;
-            color: #fff;
-            font-size: 0.6rem;
-            padding: 2px 6px;
-            border-radius: 10px;
-            margin-left: 5px;
-        }
-
         .pricing-footer-badges {
             margin-top: 30px;
             display: flex;
@@ -228,6 +234,14 @@
             font-weight: 600;
         }
 
+        .policy-disclaimer {
+            font-size: 0.7rem;
+            color: #666;
+            text-align: center;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
         .btn-pay {
             display: block;
             width: 100%;
@@ -238,12 +252,13 @@
             border-radius: 15px;
             font-weight: 700;
             font-size: 1.1rem;
-            margin-top: 30px;
+            margin-top: 20px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
             text-decoration: none;
             text-align: center;
             cursor: pointer;
+            position: relative; /* Ensure it stays above other elements if needed */
         }
 
         .btn-pay:hover {
@@ -270,15 +285,15 @@
     <a href="index.html" class="back-home"><i class="fas fa-arrow-left"></i> Back to Home</a>
 
     <div class="pricing-card-wrapper">
-        <div class="pricing-card">
+        <div class="pricing-card" id="pricingCard">
             <!-- User Info Display -->
             <div class="user-welcome">
-                Account: <strong id="displayEmail">Waiting for details...</strong>
+                Account: <strong id="displayEmail"></strong>
             </div>
 
             <!-- Dark Header Block -->
             <div class="pricing-header">
-                <h2 class="pricing-title">Activate Membership</h2>
+                <h2 class="pricing-title">Membership Pricing</h2>
             </div>
 
             <!-- Onboarding Fee -->
@@ -290,12 +305,24 @@
             <!-- Pricing List -->
             <ul class="pricing-list">
                 <li class="pricing-item">
-                    <span class="item-name"><i class="fas fa-wallet item-icon"></i> Signup Bonus</span>
-                    <span class="item-price">₦12,000 <span class="cashback-badge">Credits</span></span>
+                    <span class="item-name"><i class="fas fa-wallet item-icon"></i> Signup Value</span>
+                    <span class="item-price">₦12,000</span>
                 </li>
                 <li class="pricing-item">
                     <span class="item-name"><i class="fas fa-handshake item-icon"></i> Stream Partner</span>
-                    <span class="item-price">Included</span>
+                    <span class="item-price">₦10,200</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-sync item-icon"></i> Partner Reconnect</span>
+                    <span class="item-price">₦300</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-link item-icon"></i> Partner Chain 1</span>
+                    <span class="item-price">₦200</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-link item-icon"></i> Partner Chain 2</span>
+                    <span class="item-price">₦100</span>
                 </li>
                 
                 <!-- Divider for Tasks -->
@@ -303,28 +330,41 @@
 
                 <li class="pricing-item">
                     <span class="item-name"><i class="fas fa-broadcast-tower item-icon"></i> LiveStream Collab</span>
-                    <span class="item-price">Access Unlocked</span>
+                    <span class="item-price">₦5,700</span>
                 </li>
                 <li class="pricing-item">
                     <span class="item-name"><i class="fas fa-video item-icon"></i> Video Collab</span>
-                    <span class="item-price">Access Unlocked</span>
+                    <span class="item-price">₦2750</span>
                 </li>
                 <li class="pricing-item">
                     <span class="item-name"><i class="fas fa-headphones item-icon"></i> Audio Collab</span>
-                    <span class="item-price">Access Unlocked</span>
+                    <span class="item-price">₦1550</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-download item-icon"></i> File download</span>
+                    <span class="item-price">₦1050</span>
+                </li>
+                <li class="pricing-item">
+                    <span class="item-name"><i class="fas fa-camera item-icon"></i> Snap Collab</span>
+                    <span class="item-price">₦1150</span>
                 </li>
             </ul>
 
             <!-- Badges -->
             <div class="pricing-footer-badges">
                 <div class="badge-pill-main">
-                    Access to TikTok Creator Opportunities
+                    TikTok Creator's Network Access
                 </div>
                 <div class="badge-pills-row">
-                    <div class="badge-pill-sub">Wishhub</div>
-                    <div class="badge-pill-sub">Bazaar</div>
-                    <div class="badge-pill-sub">Skillup</div>
+                    <div class="badge-pill-sub">Wishhub (mystery gift Bi-weekly)</div>
+                    <div class="badge-pill-sub">Stream Bazaar</div>
+                    <div class="badge-pill-sub">Stream Skillup</div>
                 </div>
+            </div>
+
+            <!-- Policy Disclaimer for Ads -->
+            <div class="policy-disclaimer">
+                * Rewards are performance-based. Earnings listed are estimates based on active participation. Not an investment.
             </div>
 
             <!-- Button -->
@@ -354,7 +394,7 @@
             } else if (storageEmail) {
                 finalEmail = storageEmail;
             } else {
-                finalEmail = 'guest@stream.com'; // Fallback
+                finalEmail = ''; // Set to nothing as requested
             }
             document.getElementById('displayEmail').textContent = finalEmail;
 
@@ -370,8 +410,13 @@
             }
         });
 
-        document.getElementById('proceedBtn').addEventListener('click', () => {
+        // Combined Payment Logic
+        const initiatePayment = () => {
             const btn = document.getElementById('proceedBtn');
+            
+            // Prevent multiple clicks if already processing
+            if (btn.disabled) return;
+
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             btn.disabled = true;
 
@@ -382,8 +427,21 @@
                 // MANUAL FLOW
                 localStorage.setItem('selectedPackage', 'Premium Membership');
                 localStorage.setItem('selectedAmount', '12,000');
-                window.location.href = 'payment.html?email=' + encodeURIComponent(finalEmail);
+                // Use a default guest email if none provided for payment URL logic
+                const emailParam = finalEmail ? finalEmail : 'guest@stream.com';
+                window.location.href = 'payment.html?email=' + encodeURIComponent(emailParam);
             }
+        };
+
+        // Attach listener to button
+        document.getElementById('proceedBtn').addEventListener('click', (e) => {
+            e.stopPropagation(); // Stop bubbling so card listener doesn't fire twice
+            initiatePayment();
+        });
+
+        // Attach listener to entire card
+        document.getElementById('pricingCard').addEventListener('click', () => {
+            initiatePayment();
         });
 
         function payWithPaystack(publicKey, supportLink) {
@@ -393,9 +451,12 @@
                 return;
             }
 
+            // Fallback email for Paystack if blank
+            const payEmail = finalEmail && finalEmail.trim() !== '' ? finalEmail : 'guest@streamafrica.ng';
+
             const handler = PaystackPop.setup({
                 key: publicKey, 
-                email: finalEmail,
+                email: payEmail,
                 amount: 12000 * 100, // Amount in kobo
                 currency: 'NGN',
                 ref: ''+Math.floor((Math.random() * 1000000000) + 1), 

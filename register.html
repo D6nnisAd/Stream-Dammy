@@ -142,7 +142,7 @@
 
         .auth-subtitle {
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 0.95rem;
         }
 
@@ -201,7 +201,7 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 1rem;
-            margin-top: 20px;
+            margin-top: 10px;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
@@ -326,6 +326,15 @@
                         <label for="password" class="floating-label">Password</label>
                     </div>
 
+                    <!-- Terms & Privacy Text (Updated Color) -->
+                    <div class="mb-4">
+                        <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.85rem; line-height: 1.5; margin: 0;">
+                            By continuing, you agree to our 
+                            <a href="terms.html" style="color: var(--accent-green); text-decoration: none; font-weight: 500;">Terms of Service</a> and 
+                            <a href="privacy.html" style="color: var(--accent-green); text-decoration: none; font-weight: 500;">Privacy Policy</a>.
+                        </p>
+                    </div>
+
                     <button type="submit" class="btn-submit">Sign Up</button>
 
                     <div class="login-link">
@@ -354,6 +363,8 @@
             const fullname = document.getElementById('fullname').value.trim();
             const username = document.getElementById('username').value.trim();
             const email = document.getElementById('email').value.trim();
+            
+            // Checkbox validation removed as requested
 
             if (!email) {
                 alert("Please enter a valid email.");
