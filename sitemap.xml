@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Home Page -->
   <url>
-    <loc>https://streamafricaapp.com.ng/</loc>
+    <loc>https://streamofficial.com.ng/</loc>
     <lastmod>2024-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://streamafricaapp.com.ng/index.html</loc>
+    <loc>https://streamofficial.com.ng/index.html</loc>
     <lastmod>2024-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
@@ -16,7 +16,7 @@
 
   <!-- Registration Page (High Priority) -->
   <url>
-    <loc>https://streamafricaapp.com.ng/register.html</loc>
+    <loc>https://streamofficial.com.ng/register.html</loc>
     <lastmod>2024-05-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
