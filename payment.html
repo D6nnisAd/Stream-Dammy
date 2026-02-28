@@ -31,9 +31,8 @@
             --accent-green: #10B981;
             --text-color: #ffffff;
             --text-muted: #b0b0b0;
-            --warning-bg: rgba(220, 53, 69, 0.15);
             --warning-text: #ff6b6b;
-            --warning-border: rgba(220, 53, 69, 0.3);
+
         }
 
         body {
@@ -91,26 +90,6 @@
             padding: 30px 25px;
         }
 
-        /* Warning Box */
-        .warning-box {
-            background-color: var(--warning-bg);
-            color: var(--warning-text);
-            border: 1px solid var(--warning-border);
-            border-radius: 12px;
-            padding: 15px;
-            font-size: 0.85rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .warning-icon {
-            font-size: 1.2rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
 
         /* Summary List */
         .order-summary {
@@ -303,14 +282,7 @@
             </div>
 
             <div class="card-body-custom">
-                <!-- Warning Box -->
-                <div class="warning-box">
-                    <i class="fas fa-exclamation-triangle warning-icon"></i>
-                    <span>
-                        <strong>Do not use OPAY!</strong><br>
-                        Stream doesn’t accept payments with Opay, use other banks instead!
-                    </span>
-                </div>
+
 
                 <!-- Order Summary -->
                 <div class="order-summary">
