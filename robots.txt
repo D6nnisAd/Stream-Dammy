@@ -7,7 +7,6 @@ Allow: /assets/
 
 # Block access to sales funnel and admin pages to prevent indexing
 Disallow: /packages.html
-Disallow: /payment.html
 Disallow: /admin.html
 Disallow: /admin.js
 Disallow: /app.js
@@ -18,4 +17,4 @@ Disallow: /private/
 Disallow: /tmp/
 
 # Sitemap location
-Sitemap: https://streamafricaapp.com.ng/sitemap.xml
+Sitemap: https://streamafrica.ng/sitemap.xml
