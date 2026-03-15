@@ -334,34 +334,34 @@
 
         let supportLink = 'index.html';
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            // 1. Email Logic
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlEmail = urlParams.get('email');
-            const storageEmail = localStorage.getItem('userEmail');
+        // 1. Email Logic
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlEmail = urlParams.get('email');
+        const storageEmail = localStorage.getItem('userEmail');
 
-            let finalEmail = 'Guest (Email Not Found)';
+        let finalEmail = 'Guest (Email Not Found)';
 
-            if (urlEmail && urlEmail.trim() !== '') {
-                finalEmail = urlEmail;
-                localStorage.setItem('userEmail', urlEmail);
-            } else if (storageEmail) {
-                finalEmail = storageEmail;
-            }
+        if (urlEmail && urlEmail.trim() !== '') {
+            finalEmail = urlEmail;
+            localStorage.setItem('userEmail', urlEmail);
+        } else if (storageEmail) {
+            finalEmail = storageEmail;
+        }
 
-            // Data Retrieval
-            const pkgName = localStorage.getItem('selectedPackage') || 'Premium Membership';
-            const pkgPrice = localStorage.getItem('selectedAmount') || '12,000';
+        // Data Retrieval
+        const pkgName = localStorage.getItem('selectedPackage') || 'Premium Membership';
+        const pkgPrice = localStorage.getItem('selectedAmount') || '12,000';
 
-            // Display
-            document.getElementById('userEmail').textContent = finalEmail;
-            document.getElementById('pkgName').textContent = pkgName;
-            document.getElementById('pkgPrice').textContent = '₦' + pkgPrice;
+        // Display
+        document.getElementById('userEmail').textContent = finalEmail;
+        document.getElementById('pkgName').textContent = pkgName;
+        document.getElementById('pkgPrice').textContent = '₦' + pkgPrice;
 
-            // Start Countdown
-            startTimer();
+        // Start Countdown
+        startTimer();
 
-            // 2. Fetch Bank Details & Link from Firebase
+        // 2. Fetch Bank Details & Link from Firebase
+        async function fetchDetails() {
             try {
                 const docRef = doc(db, "settings", "global");
                 const docSnap = await getDoc(docRef);
@@ -379,7 +379,8 @@
                 console.error("Error fetching bank details:", error);
                 document.getElementById('displayBankName').textContent = "Error loading details";
             }
-        });
+        }
+        fetchDetails();
 
         // 3. Confirm Button Redirect
         document.getElementById('confirmBtn').addEventListener('click', () => {

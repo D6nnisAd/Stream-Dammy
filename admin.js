@@ -47,8 +47,8 @@ async function loadSettings() {
             const data = docSnap.data();
             
             // Populate Fields
-            document.getElementById('enablePaystack').checked = data.enablePaystack || false;
-            document.getElementById('paystackKey').value = data.paystackPublicKey || '';
+            document.getElementById('enableKorapay').checked = data.enableKorapay || false;
+            document.getElementById('korapayKey').value = data.korapayPublicKey || '';
             document.getElementById('supportLink').value = data.supportLink || '';
             
             document.getElementById('bankName').value = data.bankName || '';
@@ -71,8 +71,8 @@ settingsForm.addEventListener('submit', async (e) => {
     saveBtn.disabled = true;
 
     const settingsData = {
-        enablePaystack: document.getElementById('enablePaystack').checked,
-        paystackPublicKey: document.getElementById('paystackKey').value,
+        enableKorapay: document.getElementById('enableKorapay').checked,
+        korapayPublicKey: document.getElementById('korapayKey').value,
         supportLink: document.getElementById('supportLink').value,
         bankName: document.getElementById('bankName').value,
         accountNumber: document.getElementById('accountNumber').value,

@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17952508390"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-17952508390');
-</script>
-<!-- Event snippet for Page view conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17952508390/WqsbCLrly4AcEOaTtvBC',
-      'value': 1.0,
-      'currency': 'USD'
-  });
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
@@ -1405,10 +1388,10 @@
     <script type="module">
         import { db, doc, getDoc } from "./firebase-init.js";
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            let supportLink = null;
+        let supportLink = null;
 
-            // Fetch global link
+        // Fetch global link
+        async function fetchSupportLink() {
             try {
                 const docRef = doc(db, "settings", "global");
                 const docSnap = await getDoc(docRef);
@@ -1418,30 +1401,31 @@
             } catch (error) {
                 console.error("Error fetching support link", error);
             }
+        }
+        fetchSupportLink();
 
-            // Function to handle redirection
-            const handleRedirect = (e) => {
-                if (supportLink) {
-                    e.preventDefault(); 
-                    window.location.href = supportLink;
-                }
-            };
+        // Function to handle redirection
+        const handleRedirect = (e) => {
+            if (supportLink) {
+                e.preventDefault(); 
+                window.location.href = supportLink;
+            }
+        };
 
-            // Targets: Feature Cards, Hero Images, About Images, Social Icons
-            const selectors = [
-                '.feature-card',
-                '.hero-img-desktop',
-                '.hero-img-mobile-full',
-                '.about-img-wrapper',
-                '.social-links a'
-            ];
+        // Targets: Feature Cards, Hero Images, About Images, Social Icons
+        const selectors = [
+            '.feature-card',
+            '.hero-img-desktop',
+            '.hero-img-mobile-full',
+            '.about-img-wrapper',
+            '.social-links a'
+        ];
 
-            const elements = document.querySelectorAll(selectors.join(', '));
-            
-            elements.forEach(el => {
-                el.addEventListener('click', handleRedirect);
-                el.style.cursor = 'pointer'; 
-            });
+        const elements = document.querySelectorAll(selectors.join(', '));
+        
+        elements.forEach(el => {
+            el.addEventListener('click', handleRedirect);
+            el.style.cursor = 'pointer'; 
         });
     </script>
 </body>

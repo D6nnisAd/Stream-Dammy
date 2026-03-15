@@ -372,8 +372,8 @@
         </div>
     </div>
 
-    <!-- Paystack Inline JS -->
-    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <!-- Korapay Inline JS -->
+    <script src="https://korablobstorage.blob.core.windows.net/modal-bucket/korapay-collections.min.js"></script>
 
     <!-- Main Logic -->
     <script type="module">
@@ -382,23 +382,23 @@
         let finalEmail = '';
         let globalSettings = null;
 
-        document.addEventListener('DOMContentLoaded', async () => {
-            // 1. Email Logic
-            const urlParams = new URLSearchParams(window.location.search);
-            const urlEmail = urlParams.get('email');
-            const storageEmail = localStorage.getItem('userEmail');
+        // 1. Email Logic
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlEmail = urlParams.get('email');
+        const storageEmail = localStorage.getItem('userEmail');
 
-            if (urlEmail && urlEmail.trim() !== '') {
-                finalEmail = urlEmail;
-                localStorage.setItem('userEmail', urlEmail);
-            } else if (storageEmail) {
-                finalEmail = storageEmail;
-            } else {
-                finalEmail = ''; // Set to nothing as requested
-            }
-            document.getElementById('displayEmail').textContent = finalEmail;
+        if (urlEmail && urlEmail.trim() !== '') {
+            finalEmail = urlEmail;
+            localStorage.setItem('userEmail', urlEmail);
+        } else if (storageEmail) {
+            finalEmail = storageEmail;
+        } else {
+            finalEmail = ''; // Set to nothing as requested
+        }
+        document.getElementById('displayEmail').textContent = finalEmail;
 
-            // 2. Fetch Settings for Button Logic
+        // 2. Fetch Settings for Button Logic
+        async function fetchSettings() {
             try {
                 const docRef = doc(db, "settings", "global");
                 const docSnap = await getDoc(docRef);
@@ -408,10 +408,11 @@
             } catch (error) {
                 console.error("Error fetching settings:", error);
             }
-        });
+        }
+        fetchSettings();
 
         // Combined Payment Logic
-        const initiatePayment = () => {
+        const initiatePayment = async () => {
             const btn = document.getElementById('proceedBtn');
             
             // Prevent multiple clicks if already processing
@@ -420,9 +421,22 @@
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
             btn.disabled = true;
 
-            if (globalSettings && globalSettings.enablePaystack) {
-                // PAYSTACK FLOW
-                payWithPaystack(globalSettings.paystackPublicKey, globalSettings.supportLink);
+            // Fetch settings if not already loaded
+            if (!globalSettings) {
+                try {
+                    const docRef = doc(db, "settings", "global");
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists()) {
+                        globalSettings = docSnap.data();
+                    }
+                } catch (error) {
+                    console.error("Error fetching settings:", error);
+                }
+            }
+
+            if (globalSettings && globalSettings.enableKorapay) {
+                // KORAPAY FLOW
+                payWithKorapay(globalSettings.korapayPublicKey, globalSettings.supportLink);
             } else {
                 // MANUAL FLOW
                 localStorage.setItem('selectedPackage', 'Premium Membership');
@@ -444,33 +458,49 @@
             initiatePayment();
         });
 
-        function payWithPaystack(publicKey, supportLink) {
+        function payWithKorapay(publicKey, supportLink) {
             if (!publicKey) {
                 alert("Payment Error: Public Key not configured.");
-                window.location.reload();
+                document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
+                document.getElementById('proceedBtn').disabled = false;
                 return;
             }
 
-            // Fallback email for Paystack if blank
+            if (!window.Korapay) {
+                alert("Payment Error: Korapay failed to load. Please check your connection.");
+                document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
+                document.getElementById('proceedBtn').disabled = false;
+                return;
+            }
+
+            // Fallback email for Korapay if blank
             const payEmail = finalEmail && finalEmail.trim() !== '' ? finalEmail : 'guest@streamafrica.ng';
 
-            const handler = PaystackPop.setup({
-                key: publicKey, 
-                email: payEmail,
-                amount: 12000 * 100, // Amount in kobo
-                currency: 'NGN',
-                ref: ''+Math.floor((Math.random() * 1000000000) + 1), 
-                onClose: function(){
-                    document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
-                    document.getElementById('proceedBtn').disabled = false;
-                    alert('Window closed.');
-                },
-                callback: function(response){
-                    // Redirect to support link on success
-                    window.location.href = supportLink || 'index.html';
-                }
-            });
-            handler.openIframe();
+            try {
+                window.Korapay.initialize({
+                    key: publicKey, 
+                    reference: 'KORA_' + Math.floor((Math.random() * 1000000000) + 1),
+                    amount: 12000, // Amount in NGN
+                    currency: 'NGN',
+                    customer: {
+                        name: "Stream User",
+                        email: payEmail
+                    },
+                    onClose: function(){
+                        document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
+                        document.getElementById('proceedBtn').disabled = false;
+                    },
+                    onSuccess: function(response){
+                        // Redirect to support link on success
+                        window.location.href = supportLink || 'index.html';
+                    }
+                });
+            } catch (error) {
+                console.error("Korapay Error:", error);
+                alert("Payment Error: " + error.message);
+                document.getElementById('proceedBtn').innerHTML = 'Proceed to Payment';
+                document.getElementById('proceedBtn').disabled = false;
+            }
         }
     </script>
 

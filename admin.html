@@ -426,24 +426,24 @@
                     <div class="card-header-text">
                         <i class="fas fa-credit-card text-success"></i> 
                         <span>Payment Gateway</span>
-                        <span class="ms-auto status-badge" id="paystackStatusBadge">OFFLINE</span>
+                        <span class="ms-auto status-badge" id="korapayStatusBadge">OFFLINE</span>
                     </div>
                     
                     <div class="switch-container mb-4">
                         <div>
-                            <label class="fw-bold text-white d-block" style="font-size: 1rem;">Enable Paystack</label>
+                            <label class="fw-bold text-white d-block" style="font-size: 1rem;">Enable Korapay</label>
                             <small class="text-muted">Toggle ON to accept card payments. OFF for bank transfer.</small>
                         </div>
                         <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" id="enablePaystack">
+                            <input class="form-check-input" type="checkbox" id="enableKorapay">
                         </div>
                     </div>
 
                     <div class="mb-2">
-                        <label class="form-label">Paystack Public Key</label>
+                        <label class="form-label">Korapay Public Key</label>
                         <div class="input-group">
                             <span class="input-group-text bg-transparent border-secondary"><i class="fas fa-key"></i></span>
-                            <input type="text" class="form-control border-start-0 ps-0" id="paystackKey" placeholder="pk_test_xxxxxxxxxxxxxxxx">
+                            <input type="text" class="form-control border-start-0 ps-0" id="korapayKey" placeholder="pk_test_xxxxxxxxxxxxxxxx">
                         </div>
                     </div>
                 </div>
@@ -475,7 +475,7 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <label class="form-label">Bank Name</label>
-                            <input type="text" class="form-control" id="bankName" placeholder="e.g. Opay / Palmpay">
+                            <input type="text" class="form-control" id="bankName" placeholder="e.g. GTBank / Zenith">
                         </div>
                         <div class="col-md-6">
                             <label class="form-label">Account Number</label>
@@ -505,8 +505,8 @@
     <!-- Inline UI Logic for Badge -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('enablePaystack');
-            const badge = document.getElementById('paystackStatusBadge');
+            const toggle = document.getElementById('enableKorapay');
+            const badge = document.getElementById('korapayStatusBadge');
             
             function updateBadge() {
                 if(toggle.checked) {
