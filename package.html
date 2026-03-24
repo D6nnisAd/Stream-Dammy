@@ -434,7 +434,7 @@
                 }
             }
 
-            if (globalSettings && globalSettings.enableKorapay) {
+            if (globalSettings && globalSettings.korapayPublicKey) {
                 // KORAPAY FLOW
                 payWithKorapay(globalSettings.korapayPublicKey, globalSettings.supportLink);
             } else {
